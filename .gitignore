@@ -1,0 +1,7 @@
+*.project
+.settings/
+*.classpath
+CoCoTASControl/bin/
+CoCoTASControl/gen/
+CoCoTASControl/target/
+CoCoTASServer/target/

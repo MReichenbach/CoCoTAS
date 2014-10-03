@@ -1,0 +1,90 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>de.hshannover.f4.ws1415</groupId>
+		<artifactId>CoCoTAS</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>de.hshannover.f4.ws1415.cocotas</groupId>
+	<artifactId>CoCoTASServer</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>CoCoTAS-Server</name>
+	<description>The CoCoTAS-Server is a server-console-application and is a part of the CoCoTAS system. It coordinates incoming events and executes or delegates tasks based on an ontology and a set of coordination rules.</description>
+
+	<contributors>
+		<contributor>
+			<name>Junichi Aoki</name>
+		</contributor>
+		<contributor>
+			<name>Dmitrij Mizger</name>
+		</contributor>
+		<contributor>
+			<name>Sebastian Sack</name>
+		</contributor>
+		<contributor>
+			<name>Waldemar Zimmermann</name>
+		</contributor>
+		<contributor>
+			<name>Rudolf Podlich</name>
+		</contributor>
+		<contributor>
+			<name>Gabriel Winkler</name>
+		</contributor>
+		<contributor>
+			<name>Marcel Reichenbach</name>
+		</contributor>
+	</contributors>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.2</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>de.hshannover.f4.ws1415.cocotas.server.App</mainClass>
+							<addClasspath>true</addClasspath>
+						</manifest>
+						<manifestEntries>
+							<Class-Path>.</Class-Path>
+						</manifestEntries>
+					</archive>
+					<descriptors>
+						<descriptor>src/main/assembly/bin.xml</descriptor>
+						<descriptor>src/main/assembly/src.xml</descriptor>
+						<descriptor>src/main/assembly/bundle.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.2</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
