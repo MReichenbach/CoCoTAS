@@ -1,0 +1,10 @@
+﻿language: java
+jdk:
+    - openjdk6
+
+notifications:
+    email:
+        recipients:
+            - marcelr@freenet.de
+        on_success: change
+        on_failure: change
